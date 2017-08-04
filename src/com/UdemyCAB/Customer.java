@@ -14,6 +14,12 @@ public class Customer {
         this.transactions.add(initialAmount);
         this.balance+=initialAmount;
     }
+    public Customer(String name,  double initialAmount) {
+        this.name = name;
+        this.acountnumber = "Not Designated";
+        this.transactions.add(initialAmount);
+        this.balance+=initialAmount;
+    }
 
     public void depositAmount(double amount){
         this.transactions.add(amount);
@@ -29,5 +35,9 @@ public class Customer {
             System.out.println("Transaction "+ (i+1)+" is: " + this.transactions.get(i));
 
         }
+    }
+
+    public void displayName(){
+        System.out.println(this.name);
     }
 }

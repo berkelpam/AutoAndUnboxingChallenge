@@ -33,22 +33,26 @@ public class Branch {
     public void addCustomer(String name, String accountNumber, double initialAmount) {
 
         if (customerExists(name)) {
+            errorHandler.raiseError(2);
+        } else {
             Customer customer = new Customer(name, accountNumber, initialAmount);
             customers.add(customer);
-        } else {
-            errorHandler.raiseError(2);
         }
 
     }
 
-//    private Customer getCustomer(String customerName){
+    public int branchNumber() {
+        return number;
+    }
+
+    //    private Customer getCustomer(String customerName){
 //        int customerId=this.customers.indexOf(customerName);
 //        return customers.get(customerId);
 //
 //    }
 
-    private int getCustomerId(String customerName){
-        int customerId=this.customers.indexOf(customerName);
+    private int getCustomerId(String customerName) {
+        int customerId = this.customers.indexOf(customerName);
         return customerId;
     }
 
@@ -67,13 +71,22 @@ public class Branch {
         if (customerExists(customerName)) {
             Customer customer = this.customers.get(getCustomerId(customerName));
             customer.depositAmount(amount);
-        }
-        else
-        {
+        } else {
             errorHandler.raiseError(1);
         }
+
     }
 
+    public String name (){
+        return  this.name;
+    }
 
+    public void listCustomers(){
+        for (int i = 0; i <this.customers.size() ; i++) {
+            Customer customer = this.customers.get(i);
+            customer.displayName();
+
+        }
     }
 }
+
