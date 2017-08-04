@@ -8,5 +8,15 @@ public class Bank {
    private Branch brance;
    private ArrayList<Branch> branches = new ArrayList<Branch>();
 
+   public Bank() {
+   }
 
+   public void addBranch(String branchName){
+      Branch branch=new Branch(1290,branchName);
+      addBranch(branch);
+   }
+
+   private void addBranch(Branch brance){
+      this.branches.add(brance);
+   }
 }

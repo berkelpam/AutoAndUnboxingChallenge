@@ -6,6 +6,7 @@ public class Branch {
     private int number;
     private String name;
     //private Customer customer;
+    private ErrorHandler errorHandler;
 
     private ArrayList<Customer> customers = new ArrayList<Customer>();
 
@@ -33,8 +34,9 @@ public class Branch {
 
         if (customerExists(name)) {
             Customer customer = new Customer(name, accountNumber, initialAmount);
+            customers.add(customer);
         } else {
-            System.out.println("Customer already exits");
+            errorHandler.raiseError(2);
         }
 
     }
@@ -56,12 +58,22 @@ public class Branch {
             this.customers.remove(getCustomerId(name));
 
         } else {
-            System.out.println("Customer does not exists.");
+            errorHandler.raiseError(1);
         }
 
     }
 
     public void executeTransaction(String customerName, double amount) {
+        if (customerExists(customerName)) {
+            Customer customer = this.customers.get(getCustomerId(customerName));
+            customer.depositAmount(amount);
+        }
+        else
+        {
+            errorHandler.raiseError(1);
+        }
+    }
+
 
     }
 }
