@@ -39,14 +39,22 @@ public class Branch {
 
     }
 
-    private Customer getCustomer(String customerName){
+//    private Customer getCustomer(String customerName){
+//        int customerId=this.customers.indexOf(customerName);
+//        return customers.get(customerId);
+//
+//    }
 
+    private int getCustomerId(String customerName){
+        int customerId=this.customers.indexOf(customerName);
+        return customerId;
     }
 
     public void deleteCustomer(String name) {
 
         if (customerExists(name)) {
-            //Customer customer = new Customer(name, accountNumber, initialAmount);
+            this.customers.remove(getCustomerId(name));
+
         } else {
             System.out.println("Customer does not exists.");
         }
