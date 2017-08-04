@@ -12,7 +12,7 @@ public class Bank {
    }
 
    public void addBranch(String branchName){
-      Branch branch=new Branch(1290,branchName);
+      Branch branch=new Branch((this.branches.size()+1230),branchName);
       addBranch(branch);
    }
 
