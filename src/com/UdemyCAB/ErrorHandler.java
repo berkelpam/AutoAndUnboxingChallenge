@@ -23,6 +23,11 @@ public class ErrorHandler {
                 System.out.println("Customer already exits");
                 break;
 
+            case 3:
+                //branche does not exist
+                System.out.println("Branche does not exist");
+                break;
+
             default:
                 // no message defined
                 System.out.println("Encountered an undefined error");

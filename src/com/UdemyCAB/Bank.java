@@ -5,6 +5,9 @@ import java.util.ArrayList;
 
 
 public class Bank {
+
+    private ErrorCodes errorCodes;
+
     private String name;
     private Branch brance;
     private ArrayList<Branch> branches = new ArrayList<Branch>();
@@ -54,6 +57,17 @@ public class Bank {
         Branch branch  =getBranche(branchName);
         System.out.println("List of customers for branche: " + branchName);
         branch.listCustomers();
+    }
+
+    public void executeTransaction (String branchName, String customerName, double amount){
+        Branch branch = getBranche(branchName);
+        if (Branch!=null) {
+            branch.executeTransaction(customerName, amount);
+        }
+        else
+        {
+            errorHandler.raiseError(errorCodes.BRANCH_DOES_NOT_EXIST);
+        }
     }
 }
 
