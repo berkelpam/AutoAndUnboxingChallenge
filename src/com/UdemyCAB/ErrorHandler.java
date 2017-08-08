@@ -33,6 +33,11 @@ public class ErrorHandler {
                 System.out.printf("Transaction failed.");
                 break;
 
+            case 5:
+                //.ADD_CUSTOMER_FAILED
+                System.out.println("Adding customer failed.");
+                break;
+
             default:
                 // no message defined
                 System.out.println("Encountered an undefined error");
