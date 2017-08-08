@@ -17,13 +17,18 @@ public class Bank {
         this.name = name;
     }
 
-    public void addBranch(String brancheName) {
-        Branch branch = new Branch((this.branches.size() + 1230), brancheName);
-        addBranch(branch);
+    public boolean addBranch(String brancheName) {
+        Branch existingBranche = this.getBranche(brancheName);
+
+        if (existingBranche!=null) {
+            return this.addBranch(new Branch((this.branches.size() + 1230), brancheName));
+        }
+        return false;
     }
 
-    private void addBranch(Branch branche) {
+    private boolean addBranch(Branch branche) {
         this.branches.add(branche);
+        return true;
     }
 
     public void listBranches() {
@@ -54,6 +59,16 @@ public class Bank {
         return null;
     }
 
+    public boolean findBranche(String brancheName) {
+
+        for (int i = 0; i < this.branches.size(); i++) {
+            if (this.branches.get(i).name().equals(brancheName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void listCustomersForBranch(String branchName,boolean displayTransactions){
         Branch branch  =getBranche(branchName);
         System.out.println("List of customers for branche: " + branchName);
@@ -80,6 +95,7 @@ public class Bank {
         return false;
 
     }
+
 
 
 }

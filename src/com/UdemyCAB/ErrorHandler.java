@@ -38,6 +38,11 @@ public class ErrorHandler {
                 System.out.println("Adding customer failed.");
                 break;
 
+            case 6:
+                //BRANCH_ALREADY_EXIST=6;
+                System.out.println("Branch already exists");
+                break;
+
             default:
                 // no message defined
                 System.out.println("Encountered an undefined error");
