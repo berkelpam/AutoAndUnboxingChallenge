@@ -19,7 +19,7 @@ public class Main {
         bank.addCustomer("Veldhoven","Piet",22d);
         bank.addCustomer("Veldhoven","Wim",134.33d);
         bank.listCustomersForBranch("Veldhoven");
-
+        bank.executeTransaction("Veldhoven","Jan", 200d);
 
 
     }

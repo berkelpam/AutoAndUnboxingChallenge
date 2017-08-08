@@ -61,7 +61,7 @@ public class Bank {
 
     public void executeTransaction (String branchName, String customerName, double amount){
         Branch branch = getBranche(branchName);
-        if (Branch!=null) {
+        if (branch!=null) {
             branch.executeTransaction(customerName, amount);
         }
         else
