@@ -2,6 +2,9 @@ package com.UdemyCAB;
 
 public class Main {
 
+    private ErrorCodes errorCodes;
+    private ErrorHandler errorHandler= new ErrorHandler();
+
     public static void main(String[] args) {
 //	Customer customer = new Customer("Jan","234",23.0d);
 //        System.out.println(customer.getBalance());
@@ -20,7 +23,9 @@ public class Main {
         bank.addCustomer("Veldhoven","Wim",134.33d);
         bank.listCustomersForBranch("Veldhoven");
         bank.executeTransaction("Veldhoven","Jan", 200d);
-
+        bank.executeTransaction("Veldhoven","Wim", 8d);
+        bank.executeTransaction("Veldhoven","Pipo", 8d);
+   //     bank.listCustomersForBranch("Veldhoven");
 
     }
 }

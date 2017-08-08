@@ -37,7 +37,12 @@ public class Customer {
         }
     }
 
-    public void displayName(){
+    public String displayName(){
         System.out.println(this.name);
+        return this.name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

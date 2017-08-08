@@ -11,7 +11,7 @@ public class Bank {
     private String name;
     private Branch brance;
     private ArrayList<Branch> branches = new ArrayList<Branch>();
-    private ErrorHandler errorHandler;
+    private ErrorHandler errorHandler=new ErrorHandler();
 
     public Bank(String name) {
         this.name = name;
