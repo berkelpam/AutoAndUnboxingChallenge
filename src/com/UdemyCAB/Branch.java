@@ -80,7 +80,7 @@ public class Branch {
             customer.depositAmount(amount);
             return true;
         }
-
+        errorHandler.raiseError(errorCodes.TRANSACTION_FAILED);
         return false;
 
     }

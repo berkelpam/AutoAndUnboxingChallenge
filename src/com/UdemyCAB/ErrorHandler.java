@@ -28,6 +28,11 @@ public class ErrorHandler {
                 System.out.println("Branche does not exist");
                 break;
 
+            case 4:
+                //Transaction failed
+                System.out.printf("Transaction failed.");
+                break;
+
             default:
                 // no message defined
                 System.out.println("Encountered an undefined error");
